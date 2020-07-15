@@ -665,13 +665,14 @@
         map.createPane('pane_CookCountyZoning_8');
         map.getPane('pane_CookCountyZoning_8').style.zIndex = 408;
         map.getPane('pane_CookCountyZoning_8').style['mix-blend-mode'] = 'normal';	
-        var layer_CookCountyZoning_8 = new L.TopoJSON(null, {
+        var layer_CookCountyZoning_8_geo = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_CookCountyZoning_8',
             onEachFeature: pop_CookCountyZoning_8,
             style: style_CookCountyZoning_8_0,
         });
-		getGeoData('data/CookCountyZoning_8.json').then(data => layer_CookCountyZoning_8.addData(data));
+        var layer_CookCountyZoning_8 = omnivore.topojson('data/CookCountyZoning_8.json', null, layer_CookCountyZoning_8_geo)
+		//getGeoData('data/CookCountyZoning_8.json').then(data => layer_CookCountyZoning_8.addData(data));
         bounds_group.addLayer(layer_CookCountyZoning_8);		
         function pop_INZoning_9(feature, layer) {
         }
@@ -795,13 +796,14 @@
         map.createPane('pane_INZoning_9');
         map.getPane('pane_INZoning_9').style.zIndex = 409;
         map.getPane('pane_INZoning_9').style['mix-blend-mode'] = 'normal';
-        var layer_INZoning_9 = new L.TopoJSON(null, {
+        var layer_INZoning_9_geo = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_INZoning_9',
             onEachFeature: pop_INZoning_9,
             style: style_INZoning_9_0,
         });
-		getGeoData('data/INZoning_9.json').then(data => layer_INZoning_9.addData(data));
+		var layer_INZoning_9 = omnivore.topojson('data/INZoning_9.json', null, layer_INZoning_9_geo)
+        //getGeoData('data/INZoning_9.json').then(data => layer_INZoning_9.addData(data));
         bounds_group.addLayer(layer_INZoning_9);
         function pop_SocialVulnerabilityIndex_10(feature, layer) {
         }
