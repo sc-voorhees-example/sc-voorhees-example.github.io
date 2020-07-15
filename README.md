@@ -1,1 +1,1 @@
-# sc-voorhees-example.github.io
+# calumetcollaborative.github.io
