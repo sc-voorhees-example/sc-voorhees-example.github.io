@@ -158,30 +158,7 @@
         <script src="data/RCRAHazardousWaste_25.js"></script>
         <script>
 
-        
-		// TopoJSON function to extend existing GeoJSON loading function
-		L.TopoJSON = L.GeoJSON.extend({  
-		  addData: function(jsonData) {    
-			if (jsonData.type === 'Topology') {
-			  for (key in jsonData.objects) {
-				geojson = topojson.feature(jsonData, jsonData.objects[key]);
-				L.GeoJSON.prototype.addData.call(this, geojson);
-			  }
-			}    
-			else {
-			  L.GeoJSON.prototype.addData.call(this, jsonData);
-			}
-		  }  
-		});
-		// Copyright (c) 2013 Ryan Clark		     
-		// Define a function to get and parse geojson from URL
-		async function getGeoData(url) {
-			let response = await fetch(url);
-			let data = await response.json();
-			console.log(data)
-			return data;
-		}
-      	  
+            	  
 		var map = L.map('map', {
             zoomControl:true,
 			defaultExtentControl: true,			
@@ -259,7 +236,6 @@
             style: style_USGSProtectedAreas_2_0,
         });
         omnivore.topojson('data/USGSProtectedAreas_2.json', null, layer_USGSProtectedAreas_2)
-		//getGeoData('data/USGSProtectedAreas_2.json').then(data => layer_USGSProtectedAreas_2.addData(data));
 		bounds_group.addLayer(layer_USGSProtectedAreas_2);
         function pop_Wetlands_3(feature, layer) {
         }
@@ -281,13 +257,13 @@
         map.createPane('pane_Wetlands_3');
         map.getPane('pane_Wetlands_3').style.zIndex = 403;
         map.getPane('pane_Wetlands_3').style['mix-blend-mode'] = 'normal';
-		var layer_Wetlands_3 = new L.TopoJSON(null, {
+		var layer_Wetlands_3 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_Wetlands_3',
             onEachFeature: pop_Wetlands_3,
             style: style_Wetlands_3_0,
         });
-		getGeoData('data/Wetlands_3.json').then(data => layer_Wetlands_3.addData(data));
+        omnivore.topojson('data/Wetlands_3.json', null, layer_Wetlands_3)
         bounds_group.addLayer(layer_Wetlands_3);
         function pop_500YearFloodPlain_4(feature, layer) {
         }
@@ -309,13 +285,13 @@
         map.createPane('pane_500YearFloodPlain_4');
         map.getPane('pane_500YearFloodPlain_4').style.zIndex = 404;
         map.getPane('pane_500YearFloodPlain_4').style['mix-blend-mode'] = 'normal';
-        var layer_500YearFloodPlain_4 = new L.TopoJSON(null, {
+        var layer_500YearFloodPlain_4 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_500YearFloodPlain_4',
             onEachFeature: pop_500YearFloodPlain_4,
             style: style_500YearFloodPlain_4_0,
         });
-        getGeoData('data/500YearFloodPlain_4.json').then(data => layer_500YearFloodPlain_4.addData(data));
+        omnivore.topojson('data/500YearFloodPlain_4.json', null, layer_500YearFloodPlain_4)
 		bounds_group.addLayer(layer_500YearFloodPlain_4);
         function pop_100YearFloodPlain_5(feature, layer) {
         }
@@ -337,13 +313,13 @@
         map.createPane('pane_100YearFloodPlain_5');
         map.getPane('pane_100YearFloodPlain_5').style.zIndex = 405;
         map.getPane('pane_100YearFloodPlain_5').style['mix-blend-mode'] = 'normal';
-        var layer_100YearFloodPlain_5 = new L.TopoJSON(null, {
+        var layer_100YearFloodPlain_5 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_100YearFloodPlain_5',
             onEachFeature: pop_100YearFloodPlain_5,
             style: style_100YearFloodPlain_5_0,
         });
-        getGeoData('data/100YearFloodPlain_5.json').then(data => layer_100YearFloodPlain_5.addData(data));
+        omnivore.topojson('data/100YearFloodPlain_5.json', null, layer_100YearFloodPlain_5)
 		bounds_group.addLayer(layer_100YearFloodPlain_5);
         function pop_MinimalorReducedFloodHazard_6(feature, layer) {
         }
@@ -365,13 +341,13 @@
         map.createPane('pane_MinimalorReducedFloodHazard_6');
         map.getPane('pane_MinimalorReducedFloodHazard_6').style.zIndex = 406;
         map.getPane('pane_MinimalorReducedFloodHazard_6').style['mix-blend-mode'] = 'normal';
-        var layer_MinimalorReducedFloodHazard_6 = new L.TopoJSON(null, {
+        var layer_MinimalorReducedFloodHazard_6 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_MinimalorReducedFloodHazard_6',
             onEachFeature: pop_MinimalorReducedFloodHazard_6,
             style: style_MinimalorReducedFloodHazard_6_0,
         });
-        getGeoData('data/MinimalorReducedFloodHazard_6.json').then(data => layer_MinimalorReducedFloodHazard_6.addData(data));
+        omnivore.topojson('data/MinimalorReducedFloodHazard_6.json', null, layer_MinimalorReducedFloodHazard_6)
 		bounds_group.addLayer(layer_MinimalorReducedFloodHazard_6);
         function pop_LandUse_7(feature, layer) {
             var popupContent = '<table>\
@@ -521,13 +497,13 @@
         map.createPane('pane_LandUse_7');
         map.getPane('pane_LandUse_7').style.zIndex = 407;
         map.getPane('pane_LandUse_7').style['mix-blend-mode'] = 'normal';     
-        var layer_LandUse_7 = new L.TopoJSON(null, {
+        var layer_LandUse_7 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_LandUse_7',
             onEachFeature: pop_LandUse_7,
             style: style_LandUse_7_0,
         });
-        getGeoData('data/LandUse_7.json').then(data => layer_LandUse_7.addData(data));
+        omnivore.topojson('data/LandUse_7.json', null, layer_LandUse_7)
 		bounds_group.addLayer(layer_LandUse_7);
         function pop_CookCountyZoning_8(feature, layer) {
         }
@@ -665,13 +641,13 @@
         map.createPane('pane_CookCountyZoning_8');
         map.getPane('pane_CookCountyZoning_8').style.zIndex = 408;
         map.getPane('pane_CookCountyZoning_8').style['mix-blend-mode'] = 'normal';	
-        var layer_CookCountyZoning_8 = new L.TopoJSON(null, {
+        var layer_CookCountyZoning_8 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_CookCountyZoning_8',
             onEachFeature: pop_CookCountyZoning_8,
             style: style_CookCountyZoning_8_0,
         });
-        getGeoData('data/CookCountyZoning_8.json').then(data => layer_CookCountyZoning_8.addData(data));
+        omnivore.topojson('data/CookCountyZoning_8.json', null, layer_CookCountyZoning_8)
         bounds_group.addLayer(layer_CookCountyZoning_8);		
         function pop_INZoning_9(feature, layer) {
         }
@@ -795,13 +771,13 @@
         map.createPane('pane_INZoning_9');
         map.getPane('pane_INZoning_9').style.zIndex = 409;
         map.getPane('pane_INZoning_9').style['mix-blend-mode'] = 'normal';
-        var layer_INZoning_9 = new L.TopoJSON(null, {
+        var layer_INZoning_9 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_INZoning_9',
             onEachFeature: pop_INZoning_9,
             style: style_INZoning_9_0,
         });
-		getGeoData('data/INZoning_9.json').then(data => layer_INZoning_9.addData(data));
+        omnivore.topojson('data/INZoning_9.json', null, layer_INZoning_9)
         bounds_group.addLayer(layer_INZoning_9);
         function pop_SocialVulnerabilityIndex_10(feature, layer) {
         }
@@ -867,13 +843,13 @@
         map.createPane('pane_SocialVulnerabilityIndex_10');
         map.getPane('pane_SocialVulnerabilityIndex_10').style.zIndex = 410;
         map.getPane('pane_SocialVulnerabilityIndex_10').style['mix-blend-mode'] = 'normal';
-        var layer_SocialVulnerabilityIndex_10 = new L.TopoJSON(null, {
+        var layer_SocialVulnerabilityIndex_10 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_SocialVulnerabilityIndex_10',
             onEachFeature: pop_SocialVulnerabilityIndex_10,
             style: style_SocialVulnerabilityIndex_10_0,
         });
-		getGeoData('data/SocialVulnerabilityIndex_10.json').then(data => layer_SocialVulnerabilityIndex_10.addData(data));
+        omnivore.topojson('data/SocialVulnerabilityIndex_10.json', null, layer_SocialVulnerabilityIndex_10)
         bounds_group.addLayer(layer_SocialVulnerabilityIndex_10);
         function pop_NewMarketTaxCreditsNMTC_11(feature, layer) {
         }
@@ -895,13 +871,13 @@
         map.createPane('pane_NewMarketTaxCreditsNMTC_11');
         map.getPane('pane_NewMarketTaxCreditsNMTC_11').style.zIndex = 411;
         map.getPane('pane_NewMarketTaxCreditsNMTC_11').style['mix-blend-mode'] = 'normal';
-        var layer_NewMarketTaxCreditsNMTC_11 = new L.TopoJSON(null, {
+        var layer_NewMarketTaxCreditsNMTC_11 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_NewMarketTaxCreditsNMTC_11',
             onEachFeature: pop_NewMarketTaxCreditsNMTC_11,
             style: style_NewMarketTaxCreditsNMTC_11_0,
         });
-        getGeoData('data/NewMarketTaxCreditsNMTC_11.json').then(data => layer_NewMarketTaxCreditsNMTC_11.addData(data));
+        omnivore.topojson('data/NewMarketTaxCreditsNMTC_11.json', null, layer_NewMarketTaxCreditsNMTC_11)
 		bounds_group.addLayer(layer_NewMarketTaxCreditsNMTC_11);
         function pop_HUBZones_12(feature, layer) {
         }
@@ -923,13 +899,13 @@
         map.createPane('pane_HUBZones_12');
         map.getPane('pane_HUBZones_12').style.zIndex = 412;
         map.getPane('pane_HUBZones_12').style['mix-blend-mode'] = 'normal';
-        var layer_HUBZones_12 = new L.TopoJSON(null, {
+        var layer_HUBZones_12 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_HUBZones_12',
             onEachFeature: pop_HUBZones_12,
             style: style_HUBZones_12_0,
         });
-        getGeoData('data/HUBZones_12.json').then(data => layer_HUBZones_12.addData(data));
+        omnivore.topojson('data/HUBZones_12.json', null, layer_HUBZones_12)
 		bounds_group.addLayer(layer_HUBZones_12);
         function pop_TaxIncrementFinancingTIF_13(feature, layer) {
         }
@@ -951,13 +927,13 @@
         map.createPane('pane_TaxIncrementFinancingTIF_13');
         map.getPane('pane_TaxIncrementFinancingTIF_13').style.zIndex = 413;
         map.getPane('pane_TaxIncrementFinancingTIF_13').style['mix-blend-mode'] = 'normal';
-        var layer_TaxIncrementFinancingTIF_13 = new L.TopoJSON(null, {
+        var layer_TaxIncrementFinancingTIF_13 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_TaxIncrementFinancingTIF_13',
             onEachFeature: pop_TaxIncrementFinancingTIF_13,
             style: style_TaxIncrementFinancingTIF_13_0,
         });
-		getGeoData('data/TaxIncrementFinancingTIF_13.json').then(data => layer_TaxIncrementFinancingTIF_13.addData(data));
+        omnivore.topojson('data/TaxIncrementFinancingTIF_13.json', null, layer_TaxIncrementFinancingTIF_13)
         bounds_group.addLayer(layer_TaxIncrementFinancingTIF_13);
         function pop_OpportunityZones_14(feature, layer) {
         }
@@ -979,13 +955,13 @@
         map.createPane('pane_OpportunityZones_14');
         map.getPane('pane_OpportunityZones_14').style.zIndex = 414;
         map.getPane('pane_OpportunityZones_14').style['mix-blend-mode'] = 'normal';
-        var layer_OpportunityZones_14 = new L.TopoJSON(null, {
+        var layer_OpportunityZones_14 = new L.geoJSON(null, {
             attribution: '',
             pane: 'pane_OpportunityZones_14',
             onEachFeature: pop_OpportunityZones_14,
             style: style_OpportunityZones_14_0,
         });
-        getGeoData('data/OpportunityZones_14.json').then(data => layer_OpportunityZones_14.addData(data));
+        omnivore.topojson('data/OpportunityZones_14.json', null, layer_OpportunityZones_14)
         bounds_group.addLayer(layer_OpportunityZones_14);
 		
 		
