@@ -45,8 +45,8 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <!-- Omnivore -->
-		<script src="js/leaflet-omnivore.js"></script>
+		<!-- Omnivore -->
+		<script src="js/leaflet-omnivore.js"></script>        
 		<!-- TopoJSON -->
 		<script src="js/topojson.js"></script>
 		<!-- Vector Grid -->
@@ -222,7 +222,7 @@
 	
 // Start of TopoJSON layers - must be handled individually by changing 2 key lines
 		// From: var layer_USGSProtectedAreas_2 = new L.geoJson(json_USGSProtectedAreas_2, {
-		// To: var layer_USGSProtectedAreas_2 = new L.TopoJSON(null, 
+		// To: var layer_USGSProtectedAreas_2 = new L.geoJson(null, 
 		// After var layer_USGSProtectedAreas_2 is defined, add: 
 		//      getGeoData('data/USGSProtectedAreas_2.json').then(data => layer_USGSProtectedAreas_2.addData(data));
 
@@ -252,13 +252,14 @@
         map.createPane('pane_USGSProtectedAreas_2');
         map.getPane('pane_USGSProtectedAreas_2').style.zIndex = 402;
         map.getPane('pane_USGSProtectedAreas_2').style['mix-blend-mode'] = 'normal';
-        var layer_USGSProtectedAreas_2 = new L.TopoJSON(null, {
+        var layer_USGSProtectedAreas_2 = new L.geoJson(null, {
             attribution: '',
             pane: 'pane_USGSProtectedAreas_2',
             onEachFeature: pop_USGSProtectedAreas_2,
             style: style_USGSProtectedAreas_2_0,
         });
-		getGeoData('data/USGSProtectedAreas_2.json').then(data => layer_USGSProtectedAreas_2.addData(data));
+        omnivore.topojson('data/USGSProtectedAreas_2.json', null, layer_USGSProtectedAreas_2)
+		//getGeoData('data/USGSProtectedAreas_2.json').then(data => layer_USGSProtectedAreas_2.addData(data));
 		bounds_group.addLayer(layer_USGSProtectedAreas_2);
         function pop_Wetlands_3(feature, layer) {
         }
@@ -519,15 +520,14 @@
         }
         map.createPane('pane_LandUse_7');
         map.getPane('pane_LandUse_7').style.zIndex = 407;
-        map.getPane('pane_LandUse_7').style['mix-blend-mode'] = 'normal';		
-        var layer_LandUse_7_geo = new L.geoJson(null, {
+        map.getPane('pane_LandUse_7').style['mix-blend-mode'] = 'normal';     
+        var layer_LandUse_7 = new L.TopoJSON(null, {
             attribution: '',
             pane: 'pane_LandUse_7',
             onEachFeature: pop_LandUse_7,
             style: style_LandUse_7_0,
         });
-        var layer_LandUse_7 = omnivore.topojson('data/LandUse_7.json', null, layer_LandUse_7_geo)
-        //getGeoData('data/LandUse_7.json').then(data => layer_LandUse_7.addData(data));
+        getGeoData('data/LandUse_7.json').then(data => layer_LandUse_7.addData(data));
 		bounds_group.addLayer(layer_LandUse_7);
         function pop_CookCountyZoning_8(feature, layer) {
         }
@@ -665,14 +665,13 @@
         map.createPane('pane_CookCountyZoning_8');
         map.getPane('pane_CookCountyZoning_8').style.zIndex = 408;
         map.getPane('pane_CookCountyZoning_8').style['mix-blend-mode'] = 'normal';	
-        var layer_CookCountyZoning_8_geo = new L.geoJSON(null, {
+        var layer_CookCountyZoning_8 = new L.TopoJSON(null, {
             attribution: '',
             pane: 'pane_CookCountyZoning_8',
             onEachFeature: pop_CookCountyZoning_8,
             style: style_CookCountyZoning_8_0,
         });
-        var layer_CookCountyZoning_8 = omnivore.topojson('data/CookCountyZoning_8.json', null, layer_CookCountyZoning_8_geo)
-		//getGeoData('data/CookCountyZoning_8.json').then(data => layer_CookCountyZoning_8.addData(data));
+        getGeoData('data/CookCountyZoning_8.json').then(data => layer_CookCountyZoning_8.addData(data));
         bounds_group.addLayer(layer_CookCountyZoning_8);		
         function pop_INZoning_9(feature, layer) {
         }
@@ -796,14 +795,13 @@
         map.createPane('pane_INZoning_9');
         map.getPane('pane_INZoning_9').style.zIndex = 409;
         map.getPane('pane_INZoning_9').style['mix-blend-mode'] = 'normal';
-        var layer_INZoning_9_geo = new L.geoJSON(null, {
+        var layer_INZoning_9 = new L.TopoJSON(null, {
             attribution: '',
             pane: 'pane_INZoning_9',
             onEachFeature: pop_INZoning_9,
             style: style_INZoning_9_0,
         });
-		var layer_INZoning_9 = omnivore.topojson('data/INZoning_9.json', null, layer_INZoning_9_geo)
-        //getGeoData('data/INZoning_9.json').then(data => layer_INZoning_9.addData(data));
+		getGeoData('data/INZoning_9.json').then(data => layer_INZoning_9.addData(data));
         bounds_group.addLayer(layer_INZoning_9);
         function pop_SocialVulnerabilityIndex_10(feature, layer) {
         }
