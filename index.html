@@ -58,8 +58,8 @@
 		<link rel="stylesheet" href="css/leaflet-defaultextent.css">
 		<script src="js/leaflet-defaultextent.js"></script>
 		<!-- Search -->
-		<link rel="stylesheet" href="css/leaflet-search.css">
-		<script src="js/leaflet-search.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"/>
+		<script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
 		<!-- Grouped Layer Control -->	
 		<link rel="stylesheet" href="css/leaflet-groupedlayercontrol.css" />
 		<script src="js/leaflet-groupedlayercontrol.js"></script> 
@@ -1618,20 +1618,25 @@
         })
         .show()
         
-		// Search by RCRA brownfield site locations
-		map.addControl(new L.Control.Search({
-            layer: layer_RCRAHazardousWaste_25,
-            initial: false,
-            hideMarkerOnCollapse: true,
-			//filterData: (text, records) => records,
-            propertyName: 'PRIMARY_NA',
-			moveToLocation: function(latlng, title, map) {
-				map.setView(latlng, 16);  // Set the zoom to location
-			}
-		}));
-        document.getElementsByClassName('search-button')[0].className +=
-         ' fa fa-search';
-
+        <!-- // Search by RCRA brownfield site locations -->
+		<!-- map.addControl(new L.Control.Search({ -->
+            <!-- layer: layer_RCRAHazardousWaste_25, -->
+            <!-- initial: false, -->
+            <!-- hideMarkerOnCollapse: true, -->
+			<!-- //filterData: (text, records) => records, -->
+            <!-- propertyName: 'PRIMARY_NA', -->
+			<!-- moveToLocation: function(latlng, title, map) { -->
+				<!-- map.setView(latlng, 16);  // Set the zoom to location -->
+			<!-- } -->
+		<!-- })); -->
+        <!-- document.getElementsByClassName('search-button')[0].className += -->
+         <!-- ' fa fa-search'; -->
+        
+        const searchControl = new GeoSearch.GeoSearchControl({
+              provider: new GeoSearch.OpenStreetMapProvider(),
+        });
+        map.addControl(searchControl);
+        
 		// Create the sidebar instance and add it to the map
 		var sidebar = L.control.sidebar('sidebar').addTo(map);
 
