@@ -920,25 +920,6 @@
         
         
         function pop_ZoningDune_Acres_Zoning_10(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">FLU_Gen</th>\
-                        <td>' + (feature.properties['FLU_Gen'] !== null ? autolinker.link(feature.properties['FLU_Gen'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Shape_Length'] !== null ? autolinker.link(feature.properties['Shape_Length'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
         function style_ZoningDune_Acres_Zoning_10_0(feature) {
@@ -1070,15 +1051,11 @@
         map.getPane('pane_ZoningDune_Acres_Zoning_10').style['mix-blend-mode'] = 'normal';
         var layer_ZoningDune_Acres_Zoning_10 = new L.geoJson(json_ZoningDune_Acres_Zoning_10, {
             attribution: '',
-            interactive: true,
-            dataVar: 'json_ZoningDune_Acres_Zoning_10',
-            layerName: 'layer_ZoningDune_Acres_Zoning_10',
             pane: 'pane_ZoningDune_Acres_Zoning_10',
             onEachFeature: pop_ZoningDune_Acres_Zoning_10,
             style: style_ZoningDune_Acres_Zoning_10_0,
         });
         bounds_group.addLayer(layer_ZoningDune_Acres_Zoning_10);
-        map.addLayer(layer_ZoningDune_Acres_Zoning_10);
         
         
         
@@ -1876,7 +1853,7 @@
 			'Social Vulnerability Index<br /><table><tr><td style="text-align: center;"><img src="legend/SocialVulnerabilityIndex_10_0010260.png" /></td><td>0.01 - 0.26</td></tr><tr><td style="text-align: center;"><img src="legend/SocialVulnerabilityIndex_10_0260511.png" /></td><td>0.26 - 0.51</td></tr><tr><td style="text-align: center;"><img src="legend/SocialVulnerabilityIndex_10_0510752.png" /></td><td>0.51 - 0.75</td></tr><tr><td style="text-align: center;"><img src="legend/SocialVulnerabilityIndex_10_0751003.png" /></td><td>0.75 - 1.00</td></tr></table>': layer_SocialVulnerabilityIndex_10,
 			},
 		'Zoning': {
-            'Zoning Dune_Acres_Zoning<br /><table><tr><td style="text-align: center;"><img src="legend/ZoningDune_Acres_Zoning_10_Agriculture0.png" /></td><td>Agriculture</td></tr><tr><td style="text-align: center;"><img src="legend/ZoningDune_Acres_Zoning_10_BusinessorCommercial1.png" /></td><td>Business or Commercial</td></tr><tr><td style="text-align: center;"><img src="legend/ZoningDune_Acres_Zoning_10_CentralBusinessDistrict2.png" /></td><td>Central Business District</td></tr><tr><td style="text-align: center;"><img src="legend/ZoningDune_Acres_Zoning_10_LocalPlanning3.png" /></td><td>Local Planning</td></tr><tr><td style="text-align: center;"><img src="legend/ZoningDune_Acres_Zoning_10_Manufacturing4.png" /></td><td>Manufacturing</td></tr><tr><td style="text-align: center;"><img src="legend/ZoningDune_Acres_Zoning_10_OpenSpace5.png" /></td><td>Open Space</td></tr><tr><td style="text-align: center;"><img src="legend/ZoningDune_Acres_Zoning_10_Residential6.png" /></td><td>Residential</td></tr><tr><td style="text-align: center;"><img src="legend/ZoningDune_Acres_Zoning_10_Transportation7.png" /></td><td>Transportation</td></tr></table>': layer_ZoningDune_Acres_Zoning_10,
+            'Dune Acres<br /><table><tr><td style="text-align: center;"><img src="legend/INZoning_9_Agriculture0.png" /></td><td>Agriculture</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_BusinessorCommercial1.png" /></td><td>Business or Commercial</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_CentralBusinessDistrict2.png" /></td><td>Central Business District</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_LocalPlanning3.png" /></td><td>Local Planning</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_Manufacturing4.png" /></td><td>Manufacturing</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_OpenSpace5.png" /></td><td>Open Space</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_Residential6.png" /></td><td>Residential</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_Transportation7.png" /></td><td>Transportation</td></tr></table>': layer_ZoningDune_Acres_Zoning_10,
 			'IN Zoning<br /><table><tr><td style="text-align: center;"><img src="legend/INZoning_9_Agriculture0.png" /></td><td>Agriculture</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_BusinessorCommercial1.png" /></td><td>Business or Commercial</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_CentralBusinessDistrict2.png" /></td><td>Central Business District</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_LocalPlanning3.png" /></td><td>Local Planning</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_Manufacturing4.png" /></td><td>Manufacturing</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_OpenSpace5.png" /></td><td>Open Space</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_Residential6.png" /></td><td>Residential</td></tr><tr><td style="text-align: center;"><img src="legend/INZoning_9_Transportation7.png" /></td><td>Transportation</td></tr></table>': layer_INZoning_9,
 			'Cook County Zoning<br /><table><tr><td style="text-align: center;"><img src="legend/CookCountyZoning_8_Agriculture0.png" /></td><td>Agriculture</td></tr><tr><td style="text-align: center;"><img src="legend/CookCountyZoning_8_BusinessorCommercial1.png" /></td><td>Business or Commercial</td></tr><tr><td style="text-align: center;"><img src="legend/CookCountyZoning_8_CentralBusinessDistrict2.png" /></td><td>Central Business District</td></tr><tr><td style="text-align: center;"><img src="legend/CookCountyZoning_8_LocalPlanning3.png" /></td><td>Local Planning</td></tr><tr><td style="text-align: center;"><img src="legend/CookCountyZoning_8_Manufacturing4.png" /></td><td>Manufacturing</td></tr><tr><td style="text-align: center;"><img src="legend/CookCountyZoning_8_NoZoning5.png" /></td><td>No Zoning</td></tr><tr><td style="text-align: center;"><img src="legend/CookCountyZoning_8_OpenSpace6.png" /></td><td>Open Space</td></tr><tr><td style="text-align: center;"><img src="legend/CookCountyZoning_8_Residential7.png" /></td><td>Residential</td></tr><tr><td style="text-align: center;"><img src="legend/CookCountyZoning_8_Transportation8.png" /></td><td>Transportation</td></tr></table>': layer_CookCountyZoning_8,
 			},
