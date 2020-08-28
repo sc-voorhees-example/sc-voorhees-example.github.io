@@ -277,11 +277,22 @@
         <!-- Current Version Part 1 - End Copy Here -->
 
         <!-- ************************************************************ -->
+
+
         
         
-        
-        
-        
+
+        <!-- ************************************************************ -->	
+	
+        <!-- Comment out layers converted to TopoJSON to improve performance  -->
+
+        <!-- ************************************************************ -->
+
+
+
+
+
+		<!-- Start of TopoJSON layers
         <script src="data/SocialVulnerabilityIndex_2.js"></script>
         <script src="data/MinimalorReducedFloodHazard_3.js"></script>
         <script src="data/100YearFloodPlain_4.js"></script>
@@ -295,6 +306,7 @@
         <script src="data/HUBZones_12.js"></script>
         <script src="data/TaxIncrementFinancingTIF_13.js"></script>
         <script src="data/OpportunityZones_14.js"></script>
+        End of TopoJSON layers -->	
         <script src="data/ILStateResponseActionSites_15.js"></script>
         <script src="data/ILLeakingUndergroundStorage_16.js"></script>
         <script src="data/ILNoFurtherRemediation_17.js"></script>
@@ -379,11 +391,13 @@
 
 // Current Version Part 2 - End Copy Here
 	
-// Start of TopoJSON layers - must be handled individually by changing 2 key lines
-		// From: var layer_USGSProtectedAreas_2 = new L.geoJson(json_USGSProtectedAreas_2, {
-		// To: var layer_USGSProtectedAreas_2 = new L.geoJson(null, 
-		// After var layer_USGSProtectedAreas_2 is defined, add: 
-		//      omnivore.topojson('data/USGSProtectedAreas_2.json', null, layer_USGSProtectedAreas_2);
+// Start of TopoJSON layers - must be handled individually by changing 3 key lines
+		// From: var layer_SocialVulnerabilityIndex_2 = new L.geoJson(json_SocialVulnerabilityIndex_2, {
+		// To: var layer_SocialVulnerabilityIndex_2 = new L.geoJson(null,
+        // From: dataVar: 'json_SocialVulnerabilityIndex_2',
+        // To: //dataVar: 'json_SocialVulnerabilityIndex_2',
+		// After var layer_SocialVulnerabilityIndex_2 is defined, add: 
+		//      omnivore.topojson('data/SocialVulnerabilityIndex_2.json', null, layer_SocialVulnerabilityIndex_2);
 
 //************************************************************	
 
