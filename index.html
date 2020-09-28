@@ -338,10 +338,10 @@
 		var map = L.map('map', {
             zoomControl:true,
 			defaultExtentControl: true,			
-			maxZoom:28,
+			maxZoom:15,
 			minZoom:10,
 			//zoomAnimation: false
-			zoomAnimationThreshold: 2
+			zoomAnimationThreshold: 1
         }).fitBounds([[41.18050458690117,-88.1686722914467],[41.9612337442125114,-86.36692180925673]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
