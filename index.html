@@ -399,6 +399,8 @@
 		// After var layer_SocialVulnerabilityIndex_2 is defined, add: 
 		//      omnivore.topojson('data/SocialVulnerabilityIndex_2.json', null, layer_SocialVulnerabilityIndex_2);
 
+// Start of Tile Layers - must be handled individually by replacing 
+
 //************************************************************	
 
 		
@@ -644,172 +646,23 @@
         });
         omnivore.topojson('data/USGSProtectedAreas_7.json', null, layer_USGSProtectedAreas_7)
         bounds_group.addLayer(layer_USGSProtectedAreas_7);
-        function pop_LandUse_8(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">NewJoin_Fu</th>\
-                        <td>' + (feature.properties['NewJoin_Fu'] !== null ? autolinker.link(feature.properties['NewJoin_Fu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-        function style_LandUse_8_0(feature) {
-            var context = {
-                feature: feature,
-                variables: {}
-            };
-            // Start of if blocks and style check logic
-            if (exp_LandUse_8rule0_eval_expression(context)) {
-                  return {
-                pane: 'pane_LandUse_8',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(94,255,99,1.0)',
-                interactive: true,
-            };
-                }
-                else if (exp_LandUse_8rule1_eval_expression(context)) {
-                  return {
-                pane: 'pane_LandUse_8',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(251,154,153,1.0)',
-                interactive: true,
-            };
-                }
-                else if (exp_LandUse_8rule2_eval_expression(context)) {
-                  return {
-                pane: 'pane_LandUse_8',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(117,57,5,1.0)',
-                interactive: true,
-            };
-                }
-                else if (exp_LandUse_8rule3_eval_expression(context)) {
-                  return {
-                pane: 'pane_LandUse_8',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(31,120,180,1.0)',
-                interactive: true,
-            };
-                }
-                else if (exp_LandUse_8rule4_eval_expression(context)) {
-                  return {
-                pane: 'pane_LandUse_8',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(178,223,138,1.0)',
-                interactive: true,
-            };
-                }
-                else if (exp_LandUse_8rule5_eval_expression(context)) {
-                  return {
-                pane: 'pane_LandUse_8',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(249,242,29,1.0)',
-                interactive: true,
-            };
-                }
-                else if (exp_LandUse_8rule6_eval_expression(context)) {
-                  return {
-                pane: 'pane_LandUse_8',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(28,159,215,1.0)',
-                interactive: true,
-            };
-                }
-                else if (exp_LandUse_8rule7_eval_expression(context)) {
-                  return {
-                pane: 'pane_LandUse_8',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(94,255,99,1.0)',
-                interactive: true,
-            };
-                }
-                else if (exp_LandUse_8rule8_eval_expression(context)) {
-                  return {
-                pane: 'pane_LandUse_8',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(156,156,156,1.0)',
-                interactive: true,
-            };
-                }
-            else {
-                return {fill: false, stroke: false};
-            }
-        }
+
+
+
+
+
+//************************************************************			
+		
+// Start of Tile layers
+		
+//************************************************************	
+
+
+
+
+        // Land Use
         map.createPane('pane_LandUse_8');
         map.getPane('pane_LandUse_8').style.zIndex = 408;
-        <!-- var layer_LandUse_8 = new L.geoJson(null, { -->
-            <!-- attribution: '', -->
-            <!-- interactive: true, -->
-            <!-- //dataVar: 'json_LandUse_8', -->
-            <!-- layerName: 'layer_LandUse_8', -->
-            <!-- pane: 'pane_LandUse_8', -->
-            <!-- onEachFeature: pop_LandUse_8, -->
-            <!-- style: style_LandUse_8_0, -->
-        <!-- }); -->
-        <!-- omnivore.topojson('data/LandUse_8.json', null, layer_LandUse_8) -->
         var layer_LandUse_8 = L.tileLayer('https://raw.githubusercontent.com/sc-voorhees-example/CRMT_tiles/master/xyz_LandUse/{z}/{x}/{y}.png', {
         minZoom: 10,
         maxZoom: 15,
@@ -820,319 +673,49 @@
         attribution: 'Generated by TilesXYZ'
         });
         bounds_group.addLayer(layer_LandUse_8);
-        function pop_CookCountyZoning_9(feature, layer) {
-        }
-
-        function style_CookCountyZoning_9_0(feature) {
-            switch(String(feature.properties['q2wHide_Zoning'])) {
-                case 'Agriculture':
-                    return {
-                pane: 'pane_CookCountyZoning_9',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(74,233,231,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Business or Commercial':
-                    return {
-                pane: 'pane_CookCountyZoning_9',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(236,77,41,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Central Business District':
-                    return {
-                pane: 'pane_CookCountyZoning_9',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(206,136,51,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Local Planning':
-                    return {
-                pane: 'pane_CookCountyZoning_9',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(73,148,239,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Manufacturing':
-                    return {
-                pane: 'pane_CookCountyZoning_9',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(159,56,203,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'No Zoning':
-                    return {
-                pane: 'pane_CookCountyZoning_9',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(42,223,26,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Open Space':
-                    return {
-                pane: 'pane_CookCountyZoning_9',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(33,173,103,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Residential':
-                    return {
-                pane: 'pane_CookCountyZoning_9',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(231,240,45,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Transportation':
-                    return {
-                pane: 'pane_CookCountyZoning_9',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(84,47,163,1.0)',
-                interactive: true,
-            }
-                    break;
-            }
-        }
+        
+        // Cook County Zoning        
         map.createPane('pane_CookCountyZoning_9');
         map.getPane('pane_CookCountyZoning_9').style.zIndex = 409;
-        map.getPane('pane_CookCountyZoning_9').style['mix-blend-mode'] = 'normal';
-        <!-- var layer_CookCountyZoning_9 = new L.geoJson(null, { -->
-            <!-- attribution: '', -->
-            <!-- interactive: true, -->
-            <!-- //dataVar: 'json_CookCountyZoning_9', -->
-            <!-- layerName: 'layer_CookCountyZoning_9', -->
-            <!-- pane: 'pane_CookCountyZoning_9', -->
-            <!-- onEachFeature: pop_CookCountyZoning_9, -->
-            <!-- style: style_CookCountyZoning_9_0, -->
-        <!-- }); -->
-        <!-- omnivore.topojson('data/CookCountyZoning_9.json', null, layer_CookCountyZoning_9) -->
         var layer_CookCountyZoning_9 = L.tileLayer('https://raw.githubusercontent.com/sc-voorhees-example/CRMT_tiles/master/xyz_CookCountyZoning/{z}/{x}/{y}.png', {
         minZoom: 10,
         maxZoom: 15,
+        pane: 'pane_CookCountyZoning_9',
         bounds: [[40.88716954154601,-87.8407282955942],[42.156929459638185,-86.4432228342273]],
         crossOrigin: "",
         tms: false,
         attribution: 'Generated by TilesXYZ'
         });
         bounds_group.addLayer(layer_CookCountyZoning_9);
-        function pop_INZoning_10(feature, layer) {
-        }
-
-        function style_INZoning_10_0(feature) {
-            switch(String(feature.properties['q2wHide_Zoning'])) {
-                case 'Agriculture':
-                    return {
-                pane: 'pane_INZoning_10',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(74,233,231,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Business or Commercial':
-                    return {
-                pane: 'pane_INZoning_10',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(236,77,41,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Central Business District':
-                    return {
-                pane: 'pane_INZoning_10',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(206,136,51,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Local Planning':
-                    return {
-                pane: 'pane_INZoning_10',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(73,148,239,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Manufacturing':
-                    return {
-                pane: 'pane_INZoning_10',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(159,56,203,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Open Space':
-                    return {
-                pane: 'pane_INZoning_10',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(33,173,103,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Residential':
-                    return {
-                pane: 'pane_INZoning_10',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(231,240,45,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Transportation':
-                    return {
-                pane: 'pane_INZoning_10',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(84,47,163,1.0)',
-                interactive: true,
-            }
-                    break;
-            }
-        }
+        
+        // Indiana Zoning
         map.createPane('pane_INZoning_10');
         map.getPane('pane_INZoning_10').style.zIndex = 410;
-        map.getPane('pane_INZoning_10').style['mix-blend-mode'] = 'normal';
-        <!-- var layer_INZoning_10 = new L.geoJson(null, { -->
-            <!-- attribution: '', -->
-            <!-- interactive: true, -->
-            <!-- //dataVar: 'json_INZoning_10', -->
-            <!-- layerName: 'layer_INZoning_10', -->
-            <!-- pane: 'pane_INZoning_10', -->
-            <!-- onEachFeature: pop_INZoning_10, -->
-            <!-- style: style_INZoning_10_0, -->
-        <!-- }); -->
-        <!-- omnivore.topojson('data/INZoning_10.json', null, layer_INZoning_10) -->
         var layer_INZoning_10 = L.tileLayer('https://raw.githubusercontent.com/sc-voorhees-example/CRMT_tiles/master/xyz_INZoning/{z}/{x}/{y}.png', {
         minZoom: 10,
         maxZoom: 15,
+        pane: 'pane_INZoning_10',
         bounds: [[40.88716954154601,-87.8407282955942],[42.156929459638185,-86.4432228342273]],
-        //crossOrigin: "",
+        crossOrigin: "",
         tms: false,
         attribution: 'Generated by TilesXYZ'
         });
         bounds_group.addLayer(layer_INZoning_10);
+        
+        
+        
+        
+        
+ //************************************************************			
+		
+// End of Tile layers
+		
+//************************************************************	
+        
+        
+        
+        
+        
         function pop_NewMarketTaxCreditsNMTC_11(feature, layer) {
         }
 
@@ -1332,7 +915,7 @@
 		
 //************************************************************			
 		
-// End of TopoJSON layers
+// End of TopoJSON and Tile layers
 		
 //************************************************************			
 
