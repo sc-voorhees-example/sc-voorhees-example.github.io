@@ -284,7 +284,7 @@
 
         <!-- ************************************************************ -->	
 	
-        <!-- Comment out layers converted to TopoJSON to improve performance  -->
+        <!-- Comment out layers converted to TopoJSON or Tiles to improve performance  -->
 
         <!-- ************************************************************ -->
 
@@ -292,21 +292,25 @@
 
 
 
-		<!-- Start of TopoJSON layers
+		<!-- Start of TopoJSON and Tile Layers
         <script src="data/SocialVulnerabilityIndex_2.js"></script>
         <script src="data/MinimalorReducedFloodHazard_3.js"></script>
         <script src="data/100YearFloodPlain_4.js"></script>
         <script src="data/500YearFloodPlain_5.js"></script>
         <script src="data/Wetlands_6.js"></script>
         <script src="data/USGSProtectedAreas_7.js"></script>
+        
+        ***** Start of Tile Layers *****
         <script src="data/LandUse_8.js"></script>
         <script src="data/CookCountyZoning_9.js"></script>
         <script src="data/INZoning_10.js"></script>
+        ***** End of Tile layers *****
+        
         <script src="data/NewMarketTaxCreditsNMTC_11.js"></script>
         <script src="data/HUBZones_12.js"></script>
         <script src="data/TaxIncrementFinancingTIF_13.js"></script>
         <script src="data/OpportunityZones_14.js"></script>
-        End of TopoJSON layers -->	
+        End of TopoJSON and Tile layers -->	
         <script src="data/ILStateResponseActionSites_15.js"></script>
         <script src="data/ILLeakingUndergroundStorage_16.js"></script>
         <script src="data/ILNoFurtherRemediation_17.js"></script>
@@ -663,7 +667,7 @@
         // Land Use
         map.createPane('pane_LandUse_8');
         map.getPane('pane_LandUse_8').style.zIndex = 408;
-        var layer_LandUse_8 = L.tileLayer('https://raw.githubusercontent.com/sc-voorhees-example/CRMT_tiles/master/xyz_LandUse/{z}/{x}/{y}.png', {
+        var layer_LandUse_8 = L.tileLayer('https://raw.githubusercontent.com/calumetcollaborative/tile_server/master/CRMT/LandUse/{z}/{x}/{y}.png', {
         minZoom: 10,
         maxZoom: 15,
         pane: 'pane_LandUse_8',
@@ -677,7 +681,7 @@
         // Cook County Zoning        
         map.createPane('pane_CookCountyZoning_9');
         map.getPane('pane_CookCountyZoning_9').style.zIndex = 409;
-        var layer_CookCountyZoning_9 = L.tileLayer('https://raw.githubusercontent.com/sc-voorhees-example/CRMT_tiles/master/xyz_CookCountyZoning/{z}/{x}/{y}.png', {
+        var layer_CookCountyZoning_9 = L.tileLayer('https://raw.githubusercontent.com/calumetcollaborative/tile_server/master/CRMT/CookCountyZoning/{z}/{x}/{y}.png', {
         minZoom: 10,
         maxZoom: 15,
         pane: 'pane_CookCountyZoning_9',
@@ -691,7 +695,7 @@
         // Indiana Zoning
         map.createPane('pane_INZoning_10');
         map.getPane('pane_INZoning_10').style.zIndex = 410;
-        var layer_INZoning_10 = L.tileLayer('https://raw.githubusercontent.com/sc-voorhees-example/CRMT_tiles/master/xyz_INZoning/{z}/{x}/{y}.png', {
+        var layer_INZoning_10 = L.tileLayer('https://raw.githubusercontent.com/calumetcollaborative/tile_server/master/CRMT/INZoning/{z}/{x}/{y}.png', {
         minZoom: 10,
         maxZoom: 15,
         pane: 'pane_INZoning_10',
